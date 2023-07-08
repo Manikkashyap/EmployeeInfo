@@ -1,0 +1,91 @@
+table {
+  width: 100%;
+}
+
+tr.mat-header-row {
+  height: 43px;
+}
+
+.card-header{
+  background-color: #555;
+  color: white;
+}
+
+.table-search{
+  border-bottom: 1px solid #eaeff0;
+}
+
+.add{
+  border: none;
+  color: white;
+  padding: 8px 17px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.action-link-edit {
+  color: #23b7e5;
+  cursor: pointer;
+}
+
+.action-link-edit:hover {
+  text-decoration: underline;
+}
+
+.action-link-delete {
+  color: #6c757d;
+  cursor: pointer;
+}
+
+.action-link-delete:hover {
+  text-decoration: underline;
+}
+
+.check{
+  padding-left: 28px;
+}
+
+.mat-column-name,
+.mat-column-departments,
+.mat-column-salary,
+.mat-column-actions {
+  width: 150px;
+  padding-right: 7px;
+}
+
+.mat-column-snumber {
+  width: 80px;
+  padding-right: 7px;
+}
+
+::ng-deep .success-snackbar {
+  background-color: #20a03f !important;
+  color: #d4edda !important;
+}
+
+::ng-deep .mat-simple-snackbar-action {
+  color: #d4edda !important;
+}
+
+::ng-deep .error-snackbar {
+  background-color: #cc3333 !important;
+  color: #d4edda !important;
+}
+
+::ng-deep .snackbar-margin-top {
+  margin-top: 66px !important;
+}
+
+::ng-deep  .mat-mdc-snack-bar-container {
+  --mdc-snackbar-container-color: ;
+  --mdc-snackbar-supporting-text-color: rgba(255, 255, 255, 0.87);
+  --mat-snack-bar-button-color: #d4edda;
+}
+
+.filter {
+  text-align: end;
+}

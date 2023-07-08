@@ -1,0 +1,15 @@
+.control-label{
+  text-align: left;
+}
+
+:host ::ng-deep a{
+  color: blue !important;
+}
+
+.m-r-5{
+  margin-right: 5px;
+}
+
+::ng-deep .mat-mdc-select-value {
+  font-size: 14px !important;
+}

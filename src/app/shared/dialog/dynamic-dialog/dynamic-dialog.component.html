@@ -1,0 +1,54 @@
+<h2 mat-dialog-title>{{data?.headerText}}</h2>
+<mat-dialog-content class="mat-typography">
+  <div mat-dialog-content *ngIf="data?.action !==  dialogActions.Delete.action">
+    <form class="bs-example form-horizontal" [formGroup]="employeeForm">
+      <div class="form-group">
+        <label class="col-md-3 control-label">Employee Name</label>
+        <div class="col-md-9">
+          <input formControlName="name" name="name" id="name" class="form-control" placeholder="Enter your name"
+            [ngClass]="{ 'is-invalid': submitted && employeeControl['name'].errors }" />
+          <div *ngIf="submitted && employeeControl['name'].errors" class="invalid-feedback">
+            <div *ngIf="employeeControl['name'].errors['required']">Employee name is required</div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-3 control-label">Departments</label>
+        <div class="col-md-9">
+          <mat-select [ngClass]="{ 'is-invalid': submitted && employeeControl['departments'].errors }"
+            class="form-control" placeholder="Select Department" formControlName="departments">
+            <mat-option value="BackEnd">BackEnd</mat-option>
+            <mat-option value="FrontEnd">FrontEnd</mat-option>
+          </mat-select>
+          <div *ngIf="submitted && employeeControl['departments'].errors" class="invalid-feedback">
+            <div *ngIf="employeeControl['departments'].errors['required']">Departments is required</div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-3 control-label">Salary</label>
+        <div class="col-md-9">
+          <input formControlName="salary" name="salary" id="departments" class="form-control"
+            placeholder="Enter your salary"
+            [ngClass]="{ 'is-invalid': submitted && employeeControl['salary'].errors }" />
+          <div *ngIf="submitted && employeeControl['salary'].errors" class="invalid-feedback">
+            <div *ngIf="employeeControl['salary'].errors['required']">Salary is required</div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <!-- Log Out -->
+  <div mat-dialog-content *ngIf="data?.action ===  dialogActions.Delete.action">
+    Are you sure you want to delete?
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <div class="col-md-2 m-b-sm">
+    <button (click)="getDialogValue()" class="btn btn-block btn-sm btn-info"
+      cdkFocusInitial>{{data?.buttonText}}</button>
+  </div>
+  <div class="col-md-2 m-b-sm">
+    <button mat-dialog-close [mat-dialog-close]="false" class="btn btn-block btn-sm btn-secondary">Cancel</button>
+  </div>
+</mat-dialog-actions>
